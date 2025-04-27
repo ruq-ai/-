@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسائل النجاح</title>
+
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Amiri&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --main-bg: #fdf6f0;
+            --card-bg: #ffe4e1; /* Light pink */
+            --button-bg: #c8e7e0; /* Soft green */
+            --button-hover: #b2d8cc;
+            --text-color: #5d576b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--main-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #start-button {
+            background-color: var(--button-bg);
+            border: none;
+            padding: 20px 40px;
+            border-radius: 12px;
+            font-size: 22px;
+            color: var(--text-color);
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        #start-button:hover {
+            background-color: var(--button-hover);
+        }
+
+        #message-box {
+            display: none; /* Hide at first */
+            background-color: var(--card-bg);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-size: 26px;
+            color: var(--text-color);
+            max-width: 90%;
+            font-family: 'Amiri', serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #start-button {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            #message-box {
+                font-size: 22px;
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="start-button" onclick="start()">اضغط هنا لرؤية رسالة نجاحك</button>
+
+    <div id="message-box"></div>
+
+    <script>
+        const messages = [
+            "مبارك لكم النجاح والتميز والتقدم، ومن نجاح إلى نجاح",
+            "انتهت أيام السهر والتعب، وجاء اليوم الذي يكلل مجهودكم لنقول لكم فيه مبروك نجاحكم وتميزكم",
+            "تحوم الفراشات وتتناغم الكلمات مزدانة بعبارات التهتئة والتباريك",
+            "تهنئة بالنجاح لمن فاز وعرف قيمة الفواز، تهنئة بالنجاح من قلبنا لكل من حصد ثمار جهده واقترب من الفلاح",
+            "اليوم القمر يبتسم لك والنجوم تزدان بالجدّ والمثابرة فقد حققت آمالك",
+            "يا حافر الصخر بصمود، ويا سالك دروب العلم، بوركت جهودك الدؤوبة، وألف مبروك على النجاح",
+            "تعالت الأصوات، وامتزجت العبارات، وتسارعت الأنامل لتخط أجمل التهاني والتبريكات لنجاحكم الباهر",
+            "تهانينا على نجاحك الذي تستحقه، فقد كنت مثال الالتزام والنجاح الباهر",
+            "أنت تستحق هذا النجاح بالفعل. فخورين بك جداً",
+            "أطيب التهاني والأمنيات بنجاحك المبهر، آملين مواصلة هذه المسيرة الحافلة بالإنجازات",
+            "سعيد جداً برؤية ذلك النجاح الذي حققته، فإنجاز الأشياء العظيمة من سماتك",
+            "أنها مجرد مسألة وقت وستثبت للجميع أنك تستحق هذا التقدير"
+        ];
+
+        function start() {
+            // Hide the button
+            document.getElementById('start-button').style.display = 'none';
+
+            // Pick random message
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const randomMessage = messages[randomIndex];
+
+            // Show the pink box with the message
+            const messageBox = document.getElementById('message-box');
+            messageBox.textContent = randomMessage;
+            messageBox.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
